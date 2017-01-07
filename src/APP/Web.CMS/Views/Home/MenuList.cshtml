@@ -1,0 +1,21 @@
+﻿<style type="text/css">
+    
+</style>
+<div>
+    <div>
+        <h2>
+            Our Featured product:<br />
+            @ViewBag.FeaturedProduct.Name
+        </h2>
+    </div> <div>
+        <h3>
+            Now discounted to $@String.Format("{0:F}", ((decimal)ViewBag.FeaturedProduct.Price) - 100)
+        </h3>
+    </div>
+    <div>
+        @Html.ActionLink("Featured Product Details", "Details", new { id = ViewBag.FeaturedProduct.ProductId })
+    </div>
+    <div>
+        <img class="featuredProduct" src="@Href("~/Content/Images")/@ViewBag.FeaturedProduct.ImageName" alt="Featured Product" />
+    </div>
+</div>
